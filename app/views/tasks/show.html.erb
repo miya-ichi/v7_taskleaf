@@ -29,4 +29,5 @@
   </tbody>
 </table>
 
-<%= link_to '編集', edit_task_path, class: 'btn btn-primary' %>
+<%= link_to '編集', edit_task_path, class: 'btn btn-primary me-3' %>
+<%= link_to '削除', @task, method: :delete, data: { turbo_method: :delete, turbo_confirm: "タスク「#{@task.name}」を削除します。よろしいですか？" }, class: 'btn btn-danger' %>
