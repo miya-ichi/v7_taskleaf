@@ -11,12 +11,17 @@
   </head>
 
   <body>
-    <div class="app-title navbar navbar-expand-md navbar-light bg-light">
+    <div class="app-title navbar navbar-expand-md navbar-light bg-light mb-3">
       <div class="container-fluid">
         <div class="navbar-brand">Taskleaf</div>
       </div>
     </div>
     <div class="container">
+      <% if flash.notice.present? %>
+        <div class="alert alert-success">
+          <%= flash.notice %>
+        </div>
+      <% end%>
       <%= yield %>
     </div>
   </body>
