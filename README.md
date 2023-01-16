@@ -1,24 +1,13 @@
-# README
+# このリポジトリについて
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+書籍「現場で使えるRuby on Rails5速習実践ガイド」におけるサンプルアプリ「taskleaf」の作成を実践するためのリポジトリです。  
+本書では**Ruby2.5.1**および**Rails5.2.1**を使用されていますが、本リポジトリでは実験的に以下の環境で作成しています。
 
-Things you may want to cover:
+## 実行環境
+- Ruby 3.1.0
+- Rails 7.0.4
 
-* Ruby version
+## その他
+- 開発フローはGit Flowを練習がてら使用しています。
+- 伊藤淳一さんの[Qiita記事](https://qiita.com/jnchito/items/5c41a7031404c313da1f#%E3%83%90%E3%83%AA%E3%83%87%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%A4%B1%E6%95%97%E6%99%82%E3%81%AB-status-unprocessable_entity-%E3%82%92%E4%BB%98%E3%81%91%E3%82%8B%E5%BF%85%E8%A6%81%E3%81%8C%E3%81%82%E3%82%8B)に大変助けられています。ありがとうございます。
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
