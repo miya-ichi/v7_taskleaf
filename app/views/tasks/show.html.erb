@@ -16,7 +16,7 @@
     </tr>
     <tr>
       <th><%= Task.human_attribute_name(:description) %></th>
-      <td><%= simple_format(h(@task.description), {}, sanitize: false, wrapper_tag: "div") %></td>
+      <td><%= raw Rinku.auto_link(simple_format(h(@task.description), {}, sanitize: false, wrapper_tag: "div")) %></td>
     </tr>
     <tr>
       <th><%= Task.human_attribute_name(:created_at) %></th>
