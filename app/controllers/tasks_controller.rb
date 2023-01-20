@@ -15,7 +15,7 @@ class TasksController < ApplicationController
     @task = current_user.tasks.new(task_params)
 
     if @task.save
-      redirect_to @task, notice: "タスク「#{task.name}」を登録しました。"
+      redirect_to @task, notice: "タスク「#{@task.name}」を登録しました。"
     else
       render :new, status: :unprocessable_entity
     end
@@ -26,9 +26,13 @@ class TasksController < ApplicationController
   end
 
   def update
-    task = current_user.tasks.find(params[:id])
-    task.update!(task_params)
-    redirect_to tasks_url, notice: "タスク「#{task.name}」を更新しました。"
+    @task = current_user.tasks.find(params[:id])
+    
+    if @task.update(task_params)
+      redirect_to tasks_url, notice: "タスク「#{@task.name}」を更新しました。"
+    else
+      render :edit
+    end
   end
 
   def destroy
