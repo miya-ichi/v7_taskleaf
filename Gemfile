@@ -73,3 +73,4 @@ end
 
 gem 'bootstrap', '~> 5.2.0'
 gem 'rails-i18n'
+gem 'rinku'
