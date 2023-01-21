@@ -11,6 +11,10 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
+  def edit
+    @task = current_user.tasks.find(params[:id])
+  end
+
   def create
     @task = current_user.tasks.new(task_params)
 
@@ -21,13 +25,9 @@ class TasksController < ApplicationController
     end
   end
 
-  def edit
-    @task = current_user.tasks.find(params[:id])
-  end
-
   def update
     @task = current_user.tasks.find(params[:id])
-    
+
     if @task.update(task_params)
       redirect_to tasks_url, notice: "タスク「#{@task.name}」を更新しました。"
     else
