@@ -19,6 +19,10 @@
       <td><%= raw Rinku.auto_link(simple_format(h(@task.description), {}, sanitize: false, wrapper_tag: "div")) %></td>
     </tr>
     <tr>
+      <th><%= Task.human_attribute_name(:image) %></th>
+      <td><%= image_tag @task.image, height: 400 if @task.image.attached? %></td>
+    </tr>
+    <tr>
       <th><%= Task.human_attribute_name(:created_at) %></th>
       <td><%= @task.created_at %></td>
     </tr>
