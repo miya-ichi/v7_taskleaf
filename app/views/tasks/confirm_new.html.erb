@@ -1,6 +1,6 @@
 <h1>登録内容の確認</h1>
 
-<%= form_with model: @task do |f| %>
+<%= form_with model: @task, data: { turbo: false } do |f| %>
   <table class="table table-hover">
     <tbody>
       <tr>

@@ -12,7 +12,7 @@
   </ul>
 <% end %>
 
-<%= form_with model: @task, url: confirm_new_task_path do |f| %>
+<%= form_with model: @task, url: confirm_new_task_path, data: { turbo: false } do |f| %>
   <div class="mb-3">
     <div class="form-group">
       <%= f.label :name, class: 'form-label' %>
