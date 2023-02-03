@@ -19,11 +19,6 @@ class TasksController < ApplicationController
   def create
     @task = current_user.tasks.new(task_params)
 
-    if params[:back].present?
-      render :new
-      return
-    end
-
     if @task.save
       redirect_to @task, notice: "タスク「#{@task.name}」を登録しました。"
     else
@@ -47,14 +42,9 @@ class TasksController < ApplicationController
     redirect_to tasks_url, notice: "タスク「#{task.name}」を削除しました。", status: :see_other
   end
 
-  def confirm_new
-    @task = current_user.tasks.new(task_params)
-    render :new, status: :unprocessable_entity unless @task.valid?
-  end
-
   private
 
   def task_params
-    params.require(:task).permit(:name, :description)
+    params.require(:task).permit(:name, :description, :image)
   end
 end
