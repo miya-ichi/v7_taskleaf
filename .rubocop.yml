@@ -23,7 +23,6 @@ AllCops:
     - 'config/puma.rb'
     - 'config.ru'
     - 'spec/**/*'
-    - 'test/**/*'
     - 'Rakefile'
 
 Rails:
@@ -50,3 +49,7 @@ Layout/LineLength:
 Metrics/MethodLength:
   CountComments: false
   Max: 30
+
+Lint/UnusedMethodArgument:
+  Exclude:
+    - 'app/models/task.rb'
