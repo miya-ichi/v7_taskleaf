@@ -4,4 +4,26 @@
   <%= link_to '一覧', tasks_path, class: 'nav-link' %>
 </div>
 
-<%= render partial: 'form', locals: { task: @task } %>
+<% if @task.errors.present? %>
+  <ul id="error_explanation">
+    <% @task.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with model: @task, url: confirm_new_task_path do |f| %>
+  <div class="mb-3">
+    <div class="form-group">
+      <%= f.label :name, class: 'form-label' %>
+      <%= f.text_field :name, class: 'form-control', id: 'task_name' %>
+    </div>
+  </div>
+  <div class="mb-3">
+    <div class="form-group">
+      <%= f.label :description, class: 'form-label' %>
+      <%= f.text_area :description, rows: 5, class: 'form-control', id: 'task_description' %>
+    </div>
+  </div>
+  <%= f.submit '確認', class: 'btn btn-primary' %>
+<% end %>
